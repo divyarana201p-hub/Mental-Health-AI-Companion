@@ -1,2 +1,83 @@
 # Mental-Health-AI-Companion
 Mental Health AI Companion For Students
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AegisMind // CyberPsych Companion</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="logo-area">
+                <i class="fa-solid fa-shield-halved logo-icon"></i>
+                <h2>AegisMind</h2>
+            </div>
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+                <a href="#" class="nav-item"><i class="fa-solid fa-comments"></i> AI Companion</a>
+                <a href="#" class="nav-item"><i class="fa-solid fa-kit-medical"></i> De-stress Tools</a>
+            </nav>
+            <div class="user-profile">
+                <div class="avatar">C:</div>
+                <div class="user-info">
+                    <span class="username">CyberStudent_0x1</span>
+                    <span class="status">System Stable</span>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-header">
+                <h1>Welcome back, Operator.</h1>
+                <p>Remember: Your uptime matters as much as your system's uptime.</p>
+            </header>
+
+            <div class="dashboard-grid">
+                <section class="card status-card">
+                    <h3><i class="fa-solid fa-heart-pulse"></i> Current Status Logs</h3>
+                    <p>Log your current cognitive load below:</p>
+                    <div class="status-buttons">
+                        <button class="status-btn green" onclick="logStatus('Nominal')">Nominal (Clear)</button>
+                        <button class="status-btn yellow" onclick="logStatus('High Load')">High Load (Stressed)</button>
+                        <button class="status-btn red" onclick="logStatus('Critical')">Critical (Burnout Risk)</button>
+                    </div>
+                    <div id="status-display" class="status-log">Status: Awaiting input...</div>
+                </section>
+
+                <section class="card protocols-card">
+                    <h3><i class="fa-solid fa-terminal"></i> De-Stress Protocols</h3>
+                    <ul class="protocol-list">
+                        <li>
+                            <span class="protocol-name">Box Breathing (4-4-4-4)</span>
+                            <button class="action-btn" onclick="startProtocol('Box Breathing')">Execute</button>
+                        </li>
+                        <li>
+                            <span class="protocol-name">CTF Defusal (Step Away Timer)</span>
+                            <button class="action-btn" onclick="startProtocol('CTF Defusal')">Execute</button>
+                        </li>
+                    </ul>
+                    <div id="protocol-timer" class="timer-display"></div>
+                </section>
+
+                <section class="card chat-card">
+                    <h3><i class="fa-solid fa-robot"></i> AI Companion Terminal</h3>
+                    <div class="chat-box" id="chat-box">
+                        <div class="message system-msg">
+                            [SYSTEM] AegisMind operational. How are your labs going today? Feel free to vent about any compiler errors or tough challenges.
+                        </div>
+                    </div>
+                    <div class="chat-input-area">
+                        <input type="text" id="user-input" placeholder="Type a message or describe your stressor..." onkeydown="if(event.key === 'Enter') sendMessage()">
+                        <button class="send-btn" onclick="sendMessage()"><i class="fa-solid fa-paper-plane"></i></button>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
